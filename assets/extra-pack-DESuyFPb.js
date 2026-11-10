@@ -1,0 +1,1 @@
+function e(e,t,n){let r=`memory/${t}`;return{async list(){return[...(await e.list()).filter(e=>e.folder!==t),{folder:t,root:r}]},async readJson(t,i){if(t.root!==r)return e.readJson(t,i);if(!(i in n))throw Error(`${r}/${i} not found`);return JSON.parse(JSON.stringify(n[i]))}}}export{e as t};
